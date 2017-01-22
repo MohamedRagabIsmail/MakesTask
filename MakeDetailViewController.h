@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Make.h"
+
 
 @interface MakeDetailViewController : UIViewController
 @property (nonatomic, strong) UILabel* makeNameArabic;
@@ -15,4 +17,5 @@
 @property (nonatomic, strong) NSString *makeNameEnglishString;
 @property (nonatomic, strong) UIImageView *makeImageViewLarge;
 @property (nonatomic, strong) NSString *makeImageViewLargeURLString;
+@property (nonatomic, strong) Make* make;
 @end

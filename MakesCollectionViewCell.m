@@ -13,7 +13,6 @@
 - (UIImageView *)makeImageView {
     if (!_makeImageView) {
         _makeImageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
-//        _makeImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _makeImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _makeImageView;
@@ -33,10 +32,12 @@
         
         [self.makeName sizeToFit]; //added
         
-        UIEdgeInsets padding = UIEdgeInsetsMake(10 + self.contentView.bounds.size.height*0.5f, 10, 10, 10);
         
         [self.makeName mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView).with.insets(padding);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-10);
+            make.leading.equalTo(self.contentView.mas_leading).with.offset(10);
+            make.trailing.equalTo(self.contentView.mas_trailing).with.offset(-10);
+            make.height.equalTo(@(25));
         }];
         
         _makeName.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];

@@ -12,10 +12,11 @@
 		1945BEFD1E22CADB0040814D /* Make.m in Sources */ = {isa = PBXBuildFile; fileRef = 1945BEFC1E22CADB0040814D /* Make.m */; };
 		1997110D1E22BDFF006595F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1997110C1E22BDFF006595F2 /* main.m */; };
 		199711101E22BDFF006595F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1997110F1E22BDFF006595F2 /* AppDelegate.m */; };
-		199711131E22BDFF006595F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199711121E22BDFF006595F2 /* ViewController.m */; };
+		199711131E22BDFF006595F2 /* MakesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199711121E22BDFF006595F2 /* MakesViewController.m */; };
 		199711161E22BDFF006595F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199711141E22BDFF006595F2 /* Main.storyboard */; };
 		199711181E22BDFF006595F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199711171E22BDFF006595F2 /* Assets.xcassets */; };
 		1997111B1E22BDFF006595F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199711191E22BDFF006595F2 /* LaunchScreen.storyboard */; };
+		19A60F4C1E2E2283005CA068 /* MakesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A60F4B1E2E2283005CA068 /* MakesManager.m */; };
 		19E0DD601E240ED7002AF5BA /* MakesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0DD5F1E240ED7002AF5BA /* MakesCollectionViewCell.m */; };
 		2FB471F66AA0AC33106E02A4 /* libPods-Makes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52530E4542E9D13234BD5D55 /* libPods-Makes.a */; };
 /* End PBXBuildFile section */
@@ -30,12 +31,14 @@
 		1997110C1E22BDFF006595F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1997110E1E22BDFF006595F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1997110F1E22BDFF006595F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		199711111E22BDFF006595F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		199711121E22BDFF006595F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		199711111E22BDFF006595F2 /* MakesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakesViewController.h; sourceTree = "<group>"; };
+		199711121E22BDFF006595F2 /* MakesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakesViewController.m; sourceTree = "<group>"; };
 		199711151E22BDFF006595F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		199711171E22BDFF006595F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1997111A1E22BDFF006595F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1997111C1E22BDFF006595F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19A60F4A1E2E2283005CA068 /* MakesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakesManager.h; sourceTree = "<group>"; };
+		19A60F4B1E2E2283005CA068 /* MakesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakesManager.m; sourceTree = "<group>"; };
 		19E0DD5E1E240ED7002AF5BA /* MakesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakesCollectionViewCell.h; sourceTree = "<group>"; };
 		19E0DD5F1E240ED7002AF5BA /* MakesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakesCollectionViewCell.m; sourceTree = "<group>"; };
 		23B6D18B22B52386B10263BC /* Pods-Makes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makes/Pods-Makes.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,8 +88,10 @@
 			children = (
 				1997110E1E22BDFF006595F2 /* AppDelegate.h */,
 				1997110F1E22BDFF006595F2 /* AppDelegate.m */,
-				199711111E22BDFF006595F2 /* ViewController.h */,
-				199711121E22BDFF006595F2 /* ViewController.m */,
+				199711111E22BDFF006595F2 /* MakesViewController.h */,
+				199711121E22BDFF006595F2 /* MakesViewController.m */,
+				19A60F4A1E2E2283005CA068 /* MakesManager.h */,
+				19A60F4B1E2E2283005CA068 /* MakesManager.m */,
 				199711141E22BDFF006595F2 /* Main.storyboard */,
 				199711171E22BDFF006595F2 /* Assets.xcassets */,
 				199711191E22BDFF006595F2 /* LaunchScreen.storyboard */,
@@ -245,7 +250,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1945BEFD1E22CADB0040814D /* Make.m in Sources */,
-				199711131E22BDFF006595F2 /* ViewController.m in Sources */,
+				19A60F4C1E2E2283005CA068 /* MakesManager.m in Sources */,
+				199711131E22BDFF006595F2 /* MakesViewController.m in Sources */,
 				199711101E22BDFF006595F2 /* AppDelegate.m in Sources */,
 				1928FE4E1E244E6900BB6164 /* MakeDetailViewController.m in Sources */,
 				19E0DD601E240ED7002AF5BA /* MakesCollectionViewCell.m in Sources */,

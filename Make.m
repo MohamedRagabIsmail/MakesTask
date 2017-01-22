@@ -14,8 +14,6 @@
              @"makeID": @"ID",
              @"nameEn": @"NameEn",
              @"nameAr": @"NameAr",
-             @"modelsCount": @"ModelsCount",
-             @"enginesCount": @"EnginesCount",
              @"imageSmallURL": @"ImgSmall",
              @"imageLargeURL": @"ImgLarge"
              };

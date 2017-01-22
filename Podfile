@@ -9,5 +9,6 @@ target 'Makes' do
 pod 'AFNetworking'
 pod 'Mantle'
 pod 'Masonry'
+pod 'SDWebImage'
 
 end
