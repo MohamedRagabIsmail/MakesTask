@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tires"]];
+    [backgroundImage setFrame:self.view.frame];
+    [self.view addSubview:backgroundImage];
+    [self.view sendSubviewToBack:backgroundImage];
+    backgroundImage.contentMode = UIViewContentModeScaleToFill;
+    
     self.makeNameArabicString = [[NSString alloc]initWithString:self.make.nameAr];
     self.makeNameEnglishString = [[NSString alloc]initWithString:self.make.nameEn];
     self.makeImageViewLargeURLString = [[NSString alloc]initWithString:self.make.imageLargeURL];

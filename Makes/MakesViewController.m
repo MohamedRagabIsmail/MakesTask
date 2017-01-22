@@ -40,23 +40,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.makes = [[NSMutableArray alloc]init];
-    self.title = @"MAKES";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.title = @"Makes";
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
     self.makesCollectionView =[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
     [self.makesCollectionView setDataSource:self];
     [self.makesCollectionView setDelegate:self];
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tire_pattern"]];
+    self.view.backgroundColor = [UIColor blackColor];
+    self.makesCollectionView.backgroundView = backgroundImage;
     
 
     
-    [self.makesCollectionView setBackgroundColor:[UIColor lightGrayColor]];
+    [self.makesCollectionView setBackgroundColor:[UIColor whiteColor]];
     [self.makesCollectionView registerClass:[MakesCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [self.view addSubview:self.makesCollectionView];
     
     
-    UIEdgeInsets padding = UIEdgeInsetsMake(10 , 10, 10, 10);
+    UIEdgeInsets padding = UIEdgeInsetsMake(0, 0, 0, 0);
     
     [self.makesCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(padding);
@@ -85,7 +89,6 @@
                  placeholderImage:nil
                           options:SDWebImageRefreshCached];
     
-    cell.backgroundColor = [UIColor whiteColor];
     cell.makeName.text = make.nameAr;
     
     return cell;
