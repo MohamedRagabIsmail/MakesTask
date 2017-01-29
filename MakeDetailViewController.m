@@ -81,7 +81,7 @@ static NSString * const MakeNameDisplayTableViewName = @"MakeNameDisplayTableVie
     
     if(!cell){
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier MakeNameDisplayTableViewName];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: MakeNameDisplayTableViewName];
     }
     
     cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
