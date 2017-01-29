@@ -47,8 +47,8 @@ static NSString * const MakesCollectionViewCellIdentifer = @"MakesCollectionView
     
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
     self.makesCollectionView =[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
-    [self.makesCollectionView setDataSource:self];
-    [self.makesCollectionView setDelegate:self];
+    self.makesCollectionView.dataSource = self;
+    self.makesCollectionView.delegate = self;
     UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tire_pattern"]];
     self.view.backgroundColor = [UIColor blackColor];
     self.makesCollectionView.backgroundView = backgroundImage;

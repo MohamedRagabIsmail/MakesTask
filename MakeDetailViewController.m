@@ -20,7 +20,7 @@ static NSString * const MakeNameDisplayTableViewName = @"MakeNameDisplayTableVie
     [super viewDidLoad];
     
     UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tires"]];
-    [backgroundImage setFrame:self.view.frame];
+    backgroundImage.frame = self.view.frame;
     [self.view addSubview:backgroundImage];
     [self.view sendSubviewToBack:backgroundImage];
     backgroundImage.contentMode = UIViewContentModeScaleToFill;
@@ -96,9 +96,9 @@ static NSString * const MakeNameDisplayTableViewName = @"MakeNameDisplayTableVie
 
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     
-    [cell.textLabel setTextColor:[UIColor whiteColor]];
+    cell.textLabel.textColor = [UIColor whiteColor];
     
-    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:25]];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:25];
     
     cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     

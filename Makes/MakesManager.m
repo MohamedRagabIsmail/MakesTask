@@ -13,7 +13,15 @@
 @implementation MakesManager
 
 + (instancetype)manager {
-    MakesManager *makesManager = [[[self class] alloc] initWithBaseURL:[NSURL URLWithString:@"http://newapi.contactcars.com/"]];
+    
+    NSString *txtFilePath = [[NSBundle mainBundle] pathForResource:@"url_string_file" ofType:@"txt"];
+    
+    NSString *txtFileContents = [NSString stringWithContentsOfFile:txtFilePath encoding:NSUTF8StringEncoding error:NULL];
+    
+    txtFileContents = [txtFileContents stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    
+    MakesManager *makesManager = [[[self class] alloc] initWithBaseURL:[NSURL URLWithString:txtFileContents]];
+    
     return makesManager;
 }
 
@@ -27,7 +35,6 @@
 
 - (void)makesWithsuccess:(void (^)(NSArray *makes))success
                     failure:(void (^)(NSError *error))failure {
-     //  NSString* endpoint = [self.baseURL.absoluteString stringByAppendingString:@"newcars/makes"];
     NSString *endPoint = @"newcars/makes";
     [self GET:endPoint parameters:nil progress:nil
       success:^(NSURLSessionDataTask *task, id responseObject) {

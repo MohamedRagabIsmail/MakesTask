@@ -42,21 +42,15 @@
         }];
         
         self.contentView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.9];
-//        [[self contentView] setBackgroundColor:[UIColor clearColor]];
-//        [[self backgroundView] setBackgroundColor:[UIColor clearColor]];
-//        [self setBackgroundColor:[UIColor clearColor]];
-
         
        _makeName.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-        [_makeName.layer setCornerRadius:10.0f];
-        [_makeName.layer setMasksToBounds:YES];
-//        [_makeName.layer setBorderWidth:3.0f];
-//        [_makeName.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+        _makeName.layer.cornerRadius = 10.0f;
+        _makeName.layer.masksToBounds = YES;
 
-        [self.layer setCornerRadius:20.0f];
-        [self.layer setMasksToBounds:YES];
-        [self.layer setBorderWidth:3.0f];
-        [self.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+        self.layer.cornerRadius = 20.0f;
+        self.layer.masksToBounds = YES;
+        self.layer.borderWidth = 3.0f;
+        self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     }
     return self;
 }
@@ -64,10 +58,10 @@
 - (UILabel*) makeName {
     if(!_makeName){
         _makeName = [[UILabel alloc]init];
-        [_makeName setTextAlignment:NSTextAlignmentCenter];
-        [_makeName setTextColor:[UIColor darkGrayColor]];
-        [_makeName setFont:[UIFont boldSystemFontOfSize:15]];
-        [_makeName setText:@"Default"];
+        _makeName.textAlignment = NSTextAlignmentCenter;
+        _makeName.textColor = [UIColor darkGrayColor];
+        _makeName.font = [UIFont boldSystemFontOfSize:15];
+        _makeName.text = @"Default";
         
     }
     return _makeName;
