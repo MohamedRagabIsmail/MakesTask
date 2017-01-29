@@ -10,7 +10,7 @@
 #import "Make.h"
 
 
-@interface MakeDetailViewController : UIViewController
+@interface MakeDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UILabel* makeNameArabicLabel;
 @property (nonatomic, strong) UILabel* makeNameEnglishLabel;
 @property (nonatomic, strong) UIImageView *makeImageViewLarge;

@@ -9,9 +9,9 @@
 #import "MakeDetailViewController.h"
 #import "Masonry.h"
 
-
+static NSString * const MakeNameDisplayTableViewName = @"MakeNameDisplayTableViewName";
 @interface MakeDetailViewController ()
-
+@property (nonatomic) UITableView* makeNameDisplayTableView;
 @end
 
 @implementation MakeDetailViewController
@@ -43,42 +43,24 @@
         make.trailing.equalTo(self.view.mas_trailing).with.offset(-10);
         make.top.equalTo(self.view.mas_top).with.offset(10);
     }];
+    
+    self.makeNameDisplayTableView = [[UITableView alloc]init];
+    
+    self.makeNameDisplayTableView.delegate = self;
+    self.makeNameDisplayTableView.dataSource = self;
+    
+    self.makeNameDisplayTableView.backgroundColor = [UIColor clearColor];
+    self.makeNameDisplayTableView.scrollEnabled = NO;
+    self.makeNameDisplayTableView.allowsSelection = NO;
+    
+    [self.view addSubview:self.makeNameDisplayTableView];
 
-    self.makeNameEnglishLabel = [[UILabel alloc]init];
-    [self.makeNameEnglishLabel sizeToFit];
-    self.makeNameEnglishLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    [self.makeNameEnglishLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.makeNameEnglishLabel setTextColor:[UIColor whiteColor]];
-    [self.makeNameEnglishLabel setFont:[UIFont boldSystemFontOfSize:25]];
-    [self.makeNameEnglishLabel setText:self.make.nameEn];
-    [self.view addSubview:self.makeNameEnglishLabel];
-    
-    
-    [self.makeNameEnglishLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view.mas_bottom).with.offset(-10);
-        make.leading.equalTo(self.view.mas_leading).with.offset(10);
-        make.trailing.equalTo(self.view.mas_trailing).with.offset(-10);
-        make.height.equalTo(@(90));
-    }];
-
-    self.makeNameArabicLabel = [[UILabel alloc]init];
-    [self.makeNameArabicLabel sizeToFit];
-    self.makeNameArabicLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    [self.makeNameArabicLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.makeNameArabicLabel setTextColor:[UIColor whiteColor]];
-    [self.makeNameArabicLabel setFont:[UIFont boldSystemFontOfSize:25]];
-    [self.makeNameArabicLabel setText:self.make.nameAr];
-    [self.view addSubview:self.makeNameArabicLabel];
-    
-    
-    [self.makeNameArabicLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.makeNameEnglishLabel.mas_top).with.offset(-10);
-        make.leading.equalTo(self.view.mas_leading).with.offset(10);
-        make.trailing.equalTo(self.view.mas_trailing).with.offset(-10);
-        make.height.equalTo(@(90));
-    }];
-    
-
+    [self.makeNameDisplayTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.bottom.equalTo(self.view.mas_bottom).with.offset(-10);
+    make.leading.equalTo(self.view.mas_leading).with.offset(10);
+    make.trailing.equalTo(self.view.mas_trailing).with.offset(-10);
+    make.height.equalTo(@(180));
+}];
     
 }
 
@@ -87,14 +69,47 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell * cell = [self.makeNameDisplayTableView dequeueReusableCellWithIdentifier:MakeNameDisplayTableViewName];
+    
+    if(!cell){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MakeNameDisplayTableViewName];
+    }
+    
+    cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    
+    if(indexPath.row == 0)
+    {
+        cell.textLabel.text = self.make.nameAr;
+    }
+    else if(indexPath.row == 1)
+    {
+        cell.textLabel.text = self.make.nameEn;
+    }
+
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
+    
+    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:25]];
+    
+    cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    
+    
+    return cell;
+   
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 90;
+}
 
 @end
