@@ -11,9 +11,9 @@
 
 
 @interface MakeDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) UILabel* makeNameArabicLabel;
-@property (nonatomic, strong) UILabel* makeNameEnglishLabel;
+@property (nonatomic, strong) UILabel *makeNameArabicLabel;
+@property (nonatomic, strong) UILabel *makeNameEnglishLabel;
 @property (nonatomic, strong) UIImageView *makeImageViewLarge;
 @property (nonatomic, strong) NSString *makeImageViewLargeURLString;
-@property (nonatomic, strong) Make* make;
+@property (nonatomic, strong) Make *make;
 @end

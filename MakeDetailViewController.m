@@ -10,8 +10,11 @@
 #import "Masonry.h"
 
 static NSString * const MakeNameDisplayTableViewName = @"MakeNameDisplayTableViewName";
+
 @interface MakeDetailViewController ()
-@property (nonatomic) UITableView* makeNameDisplayTableView;
+
+@property (nonatomic) UITableView *makeNameDisplayTableView;
+
 @end
 
 @implementation MakeDetailViewController
@@ -77,7 +80,7 @@ static NSString * const MakeNameDisplayTableViewName = @"MakeNameDisplayTableVie
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell * cell = [self.makeNameDisplayTableView dequeueReusableCellWithIdentifier:MakeNameDisplayTableViewName];
+    UITableViewCell *cell = [self.makeNameDisplayTableView dequeueReusableCellWithIdentifier:MakeNameDisplayTableViewName];
     
     if(!cell){
         

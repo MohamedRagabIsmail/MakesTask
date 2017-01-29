@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MakesCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong) UILabel* makeName;
+@property (nonatomic, strong) UILabel *makeName;
 @property (nonatomic, strong) UIImageView *makeImageView;
 @end

@@ -9,9 +9,9 @@
 #import <Mantle/Mantle.h>
 
 @interface Make : MTLModel <MTLJSONSerializing>
-@property (nonatomic) NSNumber* makeID;
-@property (nonatomic) NSString* nameEn;
-@property (nonatomic) NSString* nameAr;
-@property (nonatomic) NSString* imageSmallURL;
-@property (nonatomic) NSString* imageLargeURL;
+@property (nonatomic) NSNumber *makeID;
+@property (nonatomic) NSString *nameEn;
+@property (nonatomic) NSString *nameAr;
+@property (nonatomic) NSString *imageSmallURL;
+@property (nonatomic) NSString *imageLargeURL;
 @end

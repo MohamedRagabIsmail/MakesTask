@@ -79,9 +79,9 @@ static NSString * const MakesCollectionViewCellIdentifer = @"MakesCollectionView
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    MakesCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:MakesCollectionViewCellIdentifer forIndexPath:indexPath];
+    MakesCollectionViewCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:MakesCollectionViewCellIdentifer forIndexPath:indexPath];
         
-    Make* make = [self.makes objectAtIndex:indexPath.item];
+    Make *make = [self.makes objectAtIndex:indexPath.item];
     
     [cell.makeImageView sd_setImageWithURL:[NSURL URLWithString:make.imageSmallURL]
                  placeholderImage:nil
