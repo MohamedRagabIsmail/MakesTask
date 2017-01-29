@@ -11,9 +11,6 @@
 
 
 @interface AppDelegate ()
-{
-    MakesViewController* VC;
-}
 
 @end
 
@@ -23,8 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    VC = [[MakesViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:VC];
+    MakesViewController *makesViewController = [[MakesViewController alloc] init];    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:makesViewController];
     [navController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Helvetica-Bold" size:25.0],NSFontAttributeName, nil]];
     
     self.window.rootViewController = navController;

@@ -25,8 +25,6 @@
     [self.view sendSubviewToBack:backgroundImage];
     backgroundImage.contentMode = UIViewContentModeScaleToFill;
     
-    self.makeNameArabicString = [[NSString alloc]initWithString:self.make.nameAr];
-    self.makeNameEnglishString = [[NSString alloc]initWithString:self.make.nameEn];
     self.makeImageViewLargeURLString = [[NSString alloc]initWithString:self.make.imageLargeURL];
     
     // Do any additional setup after loading the view.
@@ -46,35 +44,35 @@
         make.top.equalTo(self.view.mas_top).with.offset(10);
     }];
 
-    self.makeNameEnglish = [[UILabel alloc]init];
-    [self.makeNameEnglish sizeToFit];
-    self.makeNameEnglish.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    [self.makeNameEnglish setTextAlignment:NSTextAlignmentCenter];
-    [self.makeNameEnglish setTextColor:[UIColor whiteColor]];
-    [self.makeNameEnglish setFont:[UIFont boldSystemFontOfSize:25]];
-    [self.makeNameEnglish setText:self.makeNameEnglishString];
-    [self.view addSubview:self.makeNameEnglish];
+    self.makeNameEnglishLabel = [[UILabel alloc]init];
+    [self.makeNameEnglishLabel sizeToFit];
+    self.makeNameEnglishLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    [self.makeNameEnglishLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.makeNameEnglishLabel setTextColor:[UIColor whiteColor]];
+    [self.makeNameEnglishLabel setFont:[UIFont boldSystemFontOfSize:25]];
+    [self.makeNameEnglishLabel setText:self.make.nameEn];
+    [self.view addSubview:self.makeNameEnglishLabel];
     
     
-    [self.makeNameEnglish mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.makeNameEnglishLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_bottom).with.offset(-10);
         make.leading.equalTo(self.view.mas_leading).with.offset(10);
         make.trailing.equalTo(self.view.mas_trailing).with.offset(-10);
         make.height.equalTo(@(90));
     }];
 
-    self.makeNameArabic = [[UILabel alloc]init];
-    [self.makeNameArabic sizeToFit];
-    self.makeNameArabic.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    [self.makeNameArabic setTextAlignment:NSTextAlignmentCenter];
-    [self.makeNameArabic setTextColor:[UIColor whiteColor]];
-    [self.makeNameArabic setFont:[UIFont boldSystemFontOfSize:25]];
-    [self.makeNameArabic setText:self.makeNameArabicString];
-    [self.view addSubview:self.makeNameArabic];
+    self.makeNameArabicLabel = [[UILabel alloc]init];
+    [self.makeNameArabicLabel sizeToFit];
+    self.makeNameArabicLabel.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    [self.makeNameArabicLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.makeNameArabicLabel setTextColor:[UIColor whiteColor]];
+    [self.makeNameArabicLabel setFont:[UIFont boldSystemFontOfSize:25]];
+    [self.makeNameArabicLabel setText:self.make.nameAr];
+    [self.view addSubview:self.makeNameArabicLabel];
     
     
-    [self.makeNameArabic mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.makeNameEnglish.mas_top).with.offset(-10);
+    [self.makeNameArabicLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.makeNameEnglishLabel.mas_top).with.offset(-10);
         make.leading.equalTo(self.view.mas_leading).with.offset(10);
         make.trailing.equalTo(self.view.mas_trailing).with.offset(-10);
         make.height.equalTo(@(90));

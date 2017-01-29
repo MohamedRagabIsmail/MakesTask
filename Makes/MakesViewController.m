@@ -16,7 +16,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 
-
+static NSString * const MakesCollectionViewCellIdentifer = @"MakesCollectionViewCellIdentifer";
 
 @interface MakesViewController ()
 @property (nonatomic, strong) NSArray *makes;
@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.makes = [[NSMutableArray alloc]init];
+
     self.title = @"Makes";
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -56,7 +56,7 @@
 
     
     [self.makesCollectionView setBackgroundColor:[UIColor whiteColor]];
-    [self.makesCollectionView registerClass:[MakesCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    [self.makesCollectionView registerClass:[MakesCollectionViewCell class] forCellWithReuseIdentifier:MakesCollectionViewCellIdentifer];
     [self.view addSubview:self.makesCollectionView];
     
     
@@ -79,10 +79,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    MakesCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
-    cell.makeImageView.image = nil;
-    
+    MakesCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:MakesCollectionViewCellIdentifer forIndexPath:indexPath];
+        
     Make* make = [self.makes objectAtIndex:indexPath.item];
     
     [cell.makeImageView sd_setImageWithURL:[NSURL URLWithString:make.imageSmallURL]
