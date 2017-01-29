@@ -80,18 +80,20 @@ static NSString * const MakeNameDisplayTableViewName = @"MakeNameDisplayTableVie
     UITableViewCell * cell = [self.makeNameDisplayTableView dequeueReusableCellWithIdentifier:MakeNameDisplayTableViewName];
     
     if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MakeNameDisplayTableViewName];
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier MakeNameDisplayTableViewName];
     }
     
     cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     
-    if(indexPath.row == 0)
-    {
+    if(indexPath.row == 0){
+        
         cell.textLabel.text = self.make.nameAr;
-    }
-    else if(indexPath.row == 1)
-    {
+        
+    } else if(indexPath.row == 1){
+        
         cell.textLabel.text = self.make.nameEn;
+        
     }
 
     cell.textLabel.textAlignment = NSTextAlignmentCenter;

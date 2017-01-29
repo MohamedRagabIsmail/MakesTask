@@ -11,11 +11,14 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation MakesCollectionViewCell
+
 - (UIImageView *)makeImageView {
+    
     if (!_makeImageView) {
         _makeImageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
         _makeImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
+    
     return _makeImageView;
 }
 
@@ -62,7 +65,6 @@
         _makeName.textColor = [UIColor darkGrayColor];
         _makeName.font = [UIFont boldSystemFontOfSize:15];
         _makeName.text = @"Default";
-        
     }
     return _makeName;
 }

@@ -95,8 +95,11 @@ static NSString * const MakesCollectionViewCellIdentifer = @"MakesCollectionView
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MakeDetailViewController* makeDetailVC = [[MakeDetailViewController alloc]init];
+    
     Make* currentMake = [self.makes objectAtIndex:indexPath.item];
+    
     makeDetailVC.make = currentMake;
+    
     [self.navigationController pushViewController:makeDetailVC animated:YES];
     
 
